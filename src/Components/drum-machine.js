@@ -8,46 +8,57 @@ const drum = (props) => {
     <div
       id="drum-machine"
       className="min-vh-100 d-flex justify-content-center align-items-center">
-      <div id="display" className="bg-secondary border border-warning">
-        <div>
-          <button type="button" className="drum-pad">
-            <p>Q</p>
-          </button>
-          <button type="button" className="drum-pad">
-            <p>W</p>
-          </button>
-          <button type="button" className="drum-pad">
-            <p>E</p>
-          </button>
-          <button type="button" className="drum-pad">
-            <p>A</p>
-          </button>
-          <button type="button" className="drum-pad">
-            <p>S</p>
-          </button>
-          <button type="button" className="drum-pad">
-            <p>D</p>
-          </button>
-          <button type="button" className="drum-pad">
-            <p>Z</p>
-          </button>
-          <button type="button" className="drum-pad">
-            <p>X</p>
-          </button>
-          <button type="button" className="drum-pad">
-            <p>C</p>
-          </button>
+      <div
+        id="display"
+        className="d-flex bg-secondary border border-warning p-3">
+        <div
+          id="firstBox"
+          className="row row-cols-3 mx-0 text-center">
+          <div className="col">
+            <div className="drum-pad bg-warning m-2">q</div>
+          </div>
+          <div className="col">
+            <div className="drum-pad bg-warning m-2">q</div>
+          </div>
+          <div className="col">
+            <div className="drum-pad bg-warning m-2">q</div>
+          </div>
+          <div className="col">
+            <div className="drum-pad bg-warning m-2">q</div>
+          </div>
+          <div className="col">
+            <div className="drum-pad bg-warning m-2">q</div>
+          </div>
+          <div className="col">
+            <div className="drum-pad bg-warning m-2">q</div>
+          </div>
+          <div className="col">
+            <div className="drum-pad bg-warning m-2">q</div>
+          </div>
+          <div className="col">
+            <div className="drum-pad bg-warning m-2">q</div>
+          </div>
+          <div className="col">
+            <div className="drum-pad bg-warning m-2">q</div>
+          </div>
         </div>
 
-        <div>
-          <h1>Drum Machine</h1>
-          <dvi>
+        <div id="secondBox" className="pb-4 px-4">
+          <h1 className="text-center mb-4">Drum Machine</h1>
+          <div>
             <p>Text sample</p>
-          </dvi>
-          <label htmlFor="rangeLabel" className="form-label">
+          </div>
+          <label
+            htmlFor="rangeLabel"
+            className="d-block text-center form-label">
             Volume
           </label>
-          <input type="range" className="form-range" id="rangeLabel" />
+          <input
+            type="range"
+            className="form-range"
+            id="rangeLabel"
+            value={40}
+          />
 
           <div>
             <div className="form-check form-switch">
@@ -63,6 +74,7 @@ const drum = (props) => {
                 Mode
               </label>
             </div>
+
             <div className="form-check form-switch">
               <input
                 className="form-check-input"
