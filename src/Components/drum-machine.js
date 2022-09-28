@@ -1,43 +1,112 @@
-import React from "react";
+import React, { useState } from "react";
 import App from "../App";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const drum = (props) => {
+const Drum = () => {
+  const [checked, setChecked] = useState(true);
+
+  const handleSwitch = () => {
+    setChecked((prev) => !prev);
+  };
+
   return (
     <div
       id="drum-machine"
       className="min-vh-100 d-flex justify-content-center align-items-center">
       <div
         id="display"
-        className="d-flex bg-secondary border border-warning p-3">
+        className="d-flex bg-secondary border border-warning optionBox p-3">
         <div id="firstBox" className="row row-cols-3 mx-0">
           <div className="col px-1">
-            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">Q</div>
+            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">
+              <audio
+                id="Q"
+                className="clip"
+                src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"
+              />
+              Q
+            </div>
           </div>
           <div className="col px-1">
-            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">W</div>
+            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">
+              <audio
+                id="W"
+                className="clip"
+                src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"
+              />
+              W
+            </div>
           </div>
           <div className="col px-1">
-            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">E</div>
+            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">
+              <audio
+                id="E"
+                className="clip"
+                src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"
+              />
+              E
+            </div>
           </div>
           <div className="col px-1">
-            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">A</div>
+            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">
+              <audio
+                id="A"
+                className="clip"
+                src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3"
+              />
+              A
+            </div>
           </div>
           <div className="col px-1">
-            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">S</div>
+            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">
+              <audio
+                id="S"
+                className="clip"
+                src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"
+              />
+              S
+            </div>
           </div>
           <div className="col px-1">
-            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">D</div>
+            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">
+              <audio
+                id="D"
+                className="clip"
+                src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3"
+              />
+              D
+            </div>
           </div>
           <div className="col px-1">
-            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">Z</div>
+            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">
+              <audio
+                id="Z"
+                className="clip"
+                src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"
+              />
+              Z
+            </div>
           </div>
           <div className="col px-1">
-            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">X</div>
+            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">
+              <audio
+                id="X"
+                className="clip"
+                src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3"
+              />
+              X
+            </div>
           </div>
           <div className="col px-1">
-            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">C</div>
+            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">
+              <audio
+                id="C"
+                className="clip"
+                src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"
+              />
+              C
+            </div>
           </div>
         </div>
 
@@ -74,8 +143,8 @@ const drum = (props) => {
                 type="checkbox"
                 role="switch"
                 id="flexSwitchCheckChecked"
-                onChange={props.change}
-                checked={props.checked}
+                onChange={handleSwitch}
+                checked={checked}
               />
               <label
                 htmlFor="flexSwitchCheckChecked"
@@ -90,4 +159,4 @@ const drum = (props) => {
   );
 };
 
-export default drum;
+export default Drum;
