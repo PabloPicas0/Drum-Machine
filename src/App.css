@@ -17,4 +17,9 @@
   #display {
     flex-direction: column-reverse;
   }
+  .checkForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

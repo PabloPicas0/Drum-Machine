@@ -53,7 +53,7 @@ const drum = (props) => {
           </label>
           <input type="range" className="form-range" id="rangeLabel" />
 
-          <div className="mt-3">
+          <div className="mt-3 checkForm">
             <div className="form-check form-switch mb-3">
               <input
                 className="form-check-input"
