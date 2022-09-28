@@ -1,9 +1,16 @@
 .drum-pad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 80px;
 }
 
-.nopadding {
-  padding: 0 !important;
+.shadowBox {
+  box-shadow: black 3px 3px 5px;
+}
+
+.optionBox {
+  box-shadow: black 0px 0px 5px 1px;
 }
 
 @media (max-width: 960px) {
