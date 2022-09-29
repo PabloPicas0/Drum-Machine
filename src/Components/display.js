@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Display = () => {
+const Display = (props) => {
     
   const [checked, setChecked] = useState(true);
 
@@ -12,7 +12,7 @@ const Display = () => {
     <div id="secondBox" className="pb-4 px-4">
       <h1 className="text-center mb-4">Drum Machine</h1>
       <div className="text-center text-light bg-dark optionBox p-1 mb-4">
-        <span>Text sample</span>
+        <span>{props.padText}</span>
       </div>
       <label htmlFor="rangeLabel" className="d-block text-center form-label">
         Volume
