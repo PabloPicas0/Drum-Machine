@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import App from "../App";
+import "../App";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -8,6 +8,13 @@ const Drum = () => {
 
   const handleSwitch = () => {
     setChecked((prev) => !prev);
+  };
+
+  const handleClick = (e) => {
+    const audio = e.target.children[0];
+    audio.currentTime = 0
+    audio.play();
+    console.log(audio.id);
   };
 
   return (
@@ -19,17 +26,22 @@ const Drum = () => {
         className="d-flex bg-secondary border border-warning optionBox p-3">
         <div id="firstBox" className="row row-cols-3 mx-0">
           <div className="col px-1">
-            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">
+            <div
+              className="drum-pad shadowBox rounded-3 bg-warning m-2"
+              onClick={handleClick}>
               <audio
                 id="Q"
                 className="clip"
+                type="audio/mpeg"
                 src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"
               />
               Q
             </div>
           </div>
           <div className="col px-1">
-            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">
+            <div
+              className="drum-pad shadowBox rounded-3 bg-warning m-2"
+              onClick={handleClick}>
               <audio
                 id="W"
                 className="clip"
@@ -39,7 +51,9 @@ const Drum = () => {
             </div>
           </div>
           <div className="col px-1">
-            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">
+            <div
+              className="drum-pad shadowBox rounded-3 bg-warning m-2"
+              onClick={handleClick}>
               <audio
                 id="E"
                 className="clip"
@@ -49,7 +63,9 @@ const Drum = () => {
             </div>
           </div>
           <div className="col px-1">
-            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">
+            <div
+              className="drum-pad shadowBox rounded-3 bg-warning m-2"
+              onClick={handleClick}>
               <audio
                 id="A"
                 className="clip"
@@ -59,7 +75,9 @@ const Drum = () => {
             </div>
           </div>
           <div className="col px-1">
-            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">
+            <div
+              className="drum-pad shadowBox rounded-3 bg-warning m-2"
+              onClick={handleClick}>
               <audio
                 id="S"
                 className="clip"
@@ -69,7 +87,9 @@ const Drum = () => {
             </div>
           </div>
           <div className="col px-1">
-            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">
+            <div
+              className="drum-pad shadowBox rounded-3 bg-warning m-2"
+              onClick={handleClick}>
               <audio
                 id="D"
                 className="clip"
@@ -79,7 +99,9 @@ const Drum = () => {
             </div>
           </div>
           <div className="col px-1">
-            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">
+            <div
+              className="drum-pad shadowBox rounded-3 bg-warning m-2"
+              onClick={handleClick}>
               <audio
                 id="Z"
                 className="clip"
@@ -89,7 +111,9 @@ const Drum = () => {
             </div>
           </div>
           <div className="col px-1">
-            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">
+            <div
+              className="drum-pad shadowBox rounded-3 bg-warning m-2"
+              onClick={handleClick}>
               <audio
                 id="X"
                 className="clip"
@@ -99,7 +123,9 @@ const Drum = () => {
             </div>
           </div>
           <div className="col px-1">
-            <div className="drum-pad shadowBox rounded-3 bg-warning m-2">
+            <div
+              className="drum-pad shadowBox rounded-3 bg-warning m-2"
+              onClick={handleClick}>
               <audio
                 id="C"
                 className="clip"
