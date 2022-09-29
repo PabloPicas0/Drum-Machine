@@ -7,6 +7,8 @@ import Display from "./display";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Drum = () => {
+
+  
   return (
     <div
       id="drum-machine"
@@ -25,7 +27,7 @@ const Drum = () => {
           <DrumPad />
           <DrumPad />
         </div>
-        <Display/>
+        <Display />
       </div>
     </div>
   );

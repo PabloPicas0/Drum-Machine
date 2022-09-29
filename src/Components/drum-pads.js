@@ -1,7 +1,7 @@
 import React from "react";
 
 const DrumPad = () => {
-    
+
     const handleClick = (e) => {
       const audio = e.target.children[0];
       audio.currentTime = 0;
@@ -12,7 +12,8 @@ const DrumPad = () => {
   return (
     <div className="col px-1">
       <div
-        className="drum-pad shadowBox rounded-3 bg-warning m-2">
+        className="drum-pad shadowBox rounded-3 bg-warning m-2"
+        onClick={handleClick}>
         <audio
           id="Q"
           className="clip"
