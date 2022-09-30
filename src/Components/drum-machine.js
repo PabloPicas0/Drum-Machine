@@ -78,12 +78,15 @@ const Drum = () => {
     setPressedText(text);
   };
 
+  //TODO
+  // figure out how to target spcific elements to make them play 
   const handleKeyPress = (event) => {
-    const key = event.key.toUpperCase();
+    const audio = document.querySelector(".clip") // target audio element do not add this class on not audio elements
 
-    if ("QWEASDZXC".includes(key)) {
-      document.getElementById(key).play();
-    }
+    if(event.keyCode === 67 || event.keyCode === 88 || event.keyCode === 90) {
+      audio.play()
+      audio.currentTime = 0
+    };
   };
 
   return (
@@ -93,11 +96,20 @@ const Drum = () => {
       <div
         id="display"
         className="d-flex bg-secondary border border-warning optionBox p-3">
-        <DrumPad
-          data={audioBank}
-          click={handleClick}
-          keyPress={handleKeyPress}
-        />
+        <div id="firstBox" className="row row-cols-3 mx-0">
+          {audioBank.map((element) => {
+            return (
+              <DrumPad
+                url={element.url}
+                id={element.id}
+                keyPress={element.keyPress}
+                keyCode={element.keyCode}
+                click={handleClick}
+                handleKeyPress={handleKeyPress}
+              />
+            );
+          })}
+        </div>
         <Display padText={pressedText} />
       </div>
     </div>
