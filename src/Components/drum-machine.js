@@ -35,7 +35,7 @@ const Drum = () => {
       className="min-vh-100 d-flex justify-content-center align-items-center">
       <div
         id="display"
-        className="d-flex bg-secondary border border-warning optionBox p-3">
+        className="d-flex border border-warning optionBox p-3">
         <div id="firstBox" className="row row-cols-3 mx-0">
           {audioBank.map((element, index) => {
             return (

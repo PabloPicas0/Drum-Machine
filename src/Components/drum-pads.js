@@ -19,7 +19,7 @@ const DrumPad = (props) => {
     <div className="col px-1">
       <div
         id={props.id}
-        className="drum-pad shadowBox rounded-3 bg-warning m-2"
+        className="drum-pad shadowBox rounded-3 bg-warning m-2 user-select-none"
         onClick={() => {
           props.click(props.keyPress, props.id);
         }}>

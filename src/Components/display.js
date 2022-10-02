@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faVolumeLow, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 
 const Display = (props) => {
-    
   const [checked, setChecked] = useState(true);
 
   const handleSwitch = () => {
@@ -10,14 +11,22 @@ const Display = (props) => {
 
   return (
     <div id="secondBox" className="pb-4 px-4">
-      <h1 className="text-center mb-4">Drum Machine</h1>
+      <h1 className="text-center mb-4 text-white">Drum Machine</h1>
       <div className="text-center text-light bg-dark optionBox p-1 mb-4">
         <span>{props.padText}</span>
       </div>
-      <label htmlFor="rangeLabel" className="d-block text-center form-label">
-        Volume
-      </label>
-      <input type="range" className="form-range" id="rangeLabel" />
+      <div>
+        <label
+          htmlFor="rangeLabel"
+          className="d-block text-center form-label fw-bold text-white">
+          Volume
+        </label>
+        <div className="d-flex justify-content-between align-items-center gap-2 text-white">
+          <FontAwesomeIcon icon={faVolumeLow} />
+          <input type="range" className="form-range" id="rangeLabel" />
+          <FontAwesomeIcon icon={faVolumeHigh} />
+        </div>
+      </div>
 
       <div className="mt-3 checkForm">
         <div className="form-check form-switch mb-3">
@@ -27,7 +36,9 @@ const Display = (props) => {
             role="switch"
             id="flexSwitchCheckDefault"
           />
-          <label htmlFor="flexSwitchCheckDefault" className="form-check-label">
+          <label
+            htmlFor="flexSwitchCheckDefault"
+            className="form-check-label text-white">
             Mode
           </label>
         </div>
@@ -41,7 +52,9 @@ const Display = (props) => {
             onChange={handleSwitch}
             checked={checked}
           />
-          <label htmlFor="flexSwitchCheckChecked" className="form=check-label">
+          <label
+            htmlFor="flexSwitchCheckChecked"
+            className="form=check-label text-white">
             Power
           </label>
         </div>
