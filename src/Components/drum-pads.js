@@ -13,7 +13,7 @@ const DrumPad = (props) => {
         props.handleKeyPress(e, props.keyCode, audioInput, props.id);
       });
     };
-  }, []);
+  }, [props.soundVolume]);
 
   return (
     <div className="col px-1">
@@ -21,7 +21,7 @@ const DrumPad = (props) => {
         id={props.id}
         className="drum-pad shadowBox rounded-3 bg-warning m-2 user-select-none"
         onClick={() => {
-          props.click(props.keyPress, props.id);
+          props.click(audioInput, props.id);
         }}>
         <audio
           id={props.keyPress}

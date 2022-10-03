@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVolumeLow, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
+import { faVolumeXmark, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 
 const Display = (props) => {
   const [checked, setChecked] = useState(true);
@@ -22,8 +22,17 @@ const Display = (props) => {
           Volume
         </label>
         <div className="d-flex justify-content-between align-items-center gap-2 text-white">
-          <FontAwesomeIcon icon={faVolumeLow} />
-          <input type="range" className="form-range" id="rangeLabel" />
+          <FontAwesomeIcon icon={faVolumeXmark} />
+          <input
+            type="range"
+            className="form-range"
+            id="rangeLabel"
+            min={0.0}
+            max={1}
+            step={0.01}
+            value={props.volume}
+            onChange={props.handleVolume}
+          />
           <FontAwesomeIcon icon={faVolumeHigh} />
         </div>
       </div>
