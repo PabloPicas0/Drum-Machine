@@ -8,10 +8,16 @@
 
 .drum-pad:active {
   background-color: crimson !important;
+  box-shadow: none;
 }
 
 .shadowBox {
   box-shadow: black 3px 3px 5px;
+}
+
+.activePad {
+  background-color: crimson;
+  box-shadow: none;
 }
 
 .optionBox {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../App";
+import "../App.css";
 
 import DrumPad from "./drum-pads";
 import Display from "./display";
@@ -10,7 +10,7 @@ const Drum = () => {
   const [volume, setVolume] = useState("0.3");
   //Hooks
 
-  const handleClick = (ref, text) => {
+  const handleClick = (ref, textToDisplay) => {
     if (ref.current.paused) {
       ref.current.volume = volume
       ref.current.play();
@@ -18,21 +18,22 @@ const Drum = () => {
       ref.current.currentTime = 0;
     }
 
-    setPressedText((prevText) => (prevText = text));
+    setPressedText((prevText) => (prevText = textToDisplay));
   };
 
-  const handleKeyPress = (event, keyCode, audioRef, text) => {
+  const handleKeyPress = (event, keyCode, audioRef, textToDisplay) => {
     if (event.keyCode === keyCode) {
       audioRef.current.play();
       audioRef.current.currentTime = 0;
       audioRef.current.volume = volume
-      setPressedText((prevValue) => (prevValue = text));
+      setPressedText((prevValue) => (prevValue = textToDisplay));
     }
   };
   //Handle click methods for drum pad components
 
-  const handleVolume = (event) => {
+  const handleVolume = (event, textToDisplay) => {
     setVolume(event.target.value);
+    setPressedText(textToDisplay)
   };
   //Handle inputs for Display component
 
