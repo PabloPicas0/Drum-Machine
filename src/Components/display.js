@@ -32,7 +32,7 @@ const Display = (props) => {
             step={0.01}
             value={props.volume}
             onChange={(e) => {
-              props.handleVolume(e, `Volume ${Math.round(e.target.value * 100)}%`);
+              props.handleVolume(e,`Volume ${Math.round(e.target.value * 100)}%`);
             }}
           />
           <FontAwesomeIcon icon={faVolumeHigh} />

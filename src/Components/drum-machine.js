@@ -12,7 +12,7 @@ const Drum = () => {
 
   const handleClick = (ref, textToDisplay) => {
     if (ref.current.paused) {
-      ref.current.volume = volume
+      ref.current.volume = volume;
       ref.current.play();
     } else {
       ref.current.currentTime = 0;
@@ -25,7 +25,7 @@ const Drum = () => {
     if (event.keyCode === keyCode) {
       audioRef.current.play();
       audioRef.current.currentTime = 0;
-      audioRef.current.volume = volume
+      audioRef.current.volume = volume;
       setPressedText((prevValue) => (prevValue = textToDisplay));
     }
   };
@@ -33,7 +33,7 @@ const Drum = () => {
 
   const handleVolume = (event, textToDisplay) => {
     setVolume(event.target.value);
-    setPressedText(textToDisplay)
+    setPressedText(textToDisplay);
   };
   //Handle inputs for Display component
 

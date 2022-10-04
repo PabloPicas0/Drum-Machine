@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "../App.css"
+import "../App.css";
 
 const DrumPad = (props) => {
   const [pressedKey, setPressedKey] = useState(false);
@@ -29,7 +29,7 @@ const DrumPad = (props) => {
         props.handleKeyPress(e, props.keyCode, audioInput, props.id);
         downHandler(e);
       });
-      document.removeEventListener("keyup", upHandler)
+      document.removeEventListener("keyup", upHandler);
     };
   }, [props.soundVolume]);
 

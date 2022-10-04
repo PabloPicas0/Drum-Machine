@@ -55,4 +55,4 @@ const audioBank = [
   },
 ];
 
-export default audioBank
+export default audioBank;

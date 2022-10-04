@@ -13,5 +13,5 @@ function App() {
 //TODO
 //link inputs values like sound etc with drum pads - this is done but need to fix bug when you scroll really fast volme change and play music
 //add anime sounds render conditionally baset on switch mode
-//add diffrent layout based on picked mode 
+//add diffrent layout based on picked mode
 export default App;
