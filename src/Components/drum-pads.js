@@ -37,8 +37,12 @@ const DrumPad = (props) => {
     <div className="col px-1">
       <div
         id={props.id}
-        className={`drum-pad rounded-3 m-2 user-select-none ${
-          pressedKey ? "activePad" : "shadowBox bg-warning"
+        className={`${
+          props.power
+            ? `drum-pad rounded-3 m-2 user-select-none ${
+                pressedKey ? "activePad" : "shadowBox bg-warning"
+              } `
+            : "drum-pad-deactive rounded-3 m-2 user-select-none bg-white"
         }`}
         onClick={() => {
           props.click(audioInput, props.id);
@@ -49,6 +53,7 @@ const DrumPad = (props) => {
           type="audio/mpeg"
           src={props.url}
           ref={audioInput}
+          muted={props.power ? false : true}
         />
         {props.keyPress}
       </div>

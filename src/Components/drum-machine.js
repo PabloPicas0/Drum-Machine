@@ -8,6 +8,7 @@ import audioBank from "./audioBankOne";
 const Drum = () => {
   const [pressedText, setPressedText] = useState("Displayer");
   const [volume, setVolume] = useState("0.3");
+  const [power, setPower] = useState(true);
   //Hooks
 
   const handleClick = (ref, textToDisplay) => {
@@ -35,6 +36,10 @@ const Drum = () => {
     setVolume(event.target.value);
     setPressedText(textToDisplay);
   };
+
+  const handlePowerSwitch = () => {
+    setPower((prev) => !prev);
+  };
   //Handle inputs for Display component
 
   return (
@@ -54,6 +59,7 @@ const Drum = () => {
                 click={handleClick}
                 handleKeyPress={handleKeyPress}
                 soundVolume={volume}
+                power={power}
               />
             );
           })}
@@ -62,6 +68,8 @@ const Drum = () => {
           padText={pressedText}
           volume={volume}
           handleVolume={handleVolume}
+          power={power}
+          handlePowerSwitch={handlePowerSwitch}
         />
       </div>
     </div>

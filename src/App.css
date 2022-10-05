@@ -6,6 +6,13 @@
   cursor: pointer;
 }
 
+.drum-pad-deactive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80px;
+}
+
 .drum-pad:active {
   background-color: crimson !important;
   box-shadow: none;

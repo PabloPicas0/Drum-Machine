@@ -1,19 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVolumeXmark, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 
 const Display = (props) => {
-  const [checked, setChecked] = useState(true);
-
-  const handleSwitch = () => {
-    setChecked((prev) => !prev);
-  };
-
   return (
     <div id="secondBox" className="pb-4 px-4">
       <h1 className="text-center mb-4 text-white">Drum Machine</h1>
       <div className="text-center text-light bg-dark optionBox p-1 mb-4">
-        <span>{props.padText}</span>
+        <span>{props.power ? props.padText : "Displayer"}</span>
       </div>
       <div>
         <label
@@ -32,7 +26,10 @@ const Display = (props) => {
             step={0.01}
             value={props.volume}
             onChange={(e) => {
-              props.handleVolume(e,`Volume ${Math.round(e.target.value * 100)}%`);
+              props.handleVolume(
+                e,
+                `Volume ${Math.round(e.target.value * 100)}%`
+              );
             }}
           />
           <FontAwesomeIcon icon={faVolumeHigh} />
@@ -60,8 +57,8 @@ const Display = (props) => {
             type="checkbox"
             role="switch"
             id="flexSwitchCheckChecked"
-            onChange={handleSwitch}
-            checked={checked}
+            onChange={props.handlePowerSwitch}
+            checked={props.power}
           />
           <label
             htmlFor="flexSwitchCheckChecked"
