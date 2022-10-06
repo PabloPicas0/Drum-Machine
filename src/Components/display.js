@@ -43,6 +43,7 @@ const Display = (props) => {
             type="checkbox"
             role="switch"
             id="flexSwitchCheckDefault"
+            onClick={props.handleMode}
           />
           <label
             htmlFor="flexSwitchCheckDefault"
