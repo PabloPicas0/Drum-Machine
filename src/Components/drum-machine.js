@@ -3,7 +3,9 @@ import "../App.css";
 
 import DrumPad from "./drum-pads";
 import Display from "./display";
+
 import audioBank from "./audioBankOne";
+import audioBankAnime from "./audioBankTwo";
 
 const Drum = () => {
   const [pressedText, setPressedText] = useState("Displayer");
@@ -53,22 +55,39 @@ const Drum = () => {
       className="min-vh-100 d-flex justify-content-center align-items-center">
       <div id="display" className="d-flex border border-warning optionBox p-3">
         <div id="firstBox" className="row row-cols-3 mx-0">
-          {audioBank.map((element, index) => {
-            return (
-              <DrumPad
-                key={index}
-                url={element.url}
-                id={element.id}
-                keyPress={element.keyPress}
-                keyCode={element.keyCode}
-                click={handleClick}
-                handleKeyPress={handleKeyPress}
-                soundVolume={volume}
-                power={power}
-                mode={mode}
-              />
-            );
-          })}
+          {mode
+            ? audioBankAnime.map((element, index) => {
+                return (
+                  <DrumPad
+                    key={index}
+                    url={element.url}
+                    id={element.id}
+                    keyPress={element.keyPress}
+                    keyCode={element.keyCode}
+                    click={handleClick}
+                    handleKeyPress={handleKeyPress}
+                    soundVolume={volume}
+                    power={power}
+                    mode={mode}
+                  />
+                );
+              })
+            : audioBank.map((element, index) => {
+                return (
+                  <DrumPad
+                    key={index}
+                    url={element.url}
+                    id={element.id}
+                    keyPress={element.keyPress}
+                    keyCode={element.keyCode}
+                    click={handleClick}
+                    handleKeyPress={handleKeyPress}
+                    soundVolume={volume}
+                    power={power}
+                    mode={mode}
+                  />
+                );
+              })}
         </div>
         <Display
           padText={pressedText}

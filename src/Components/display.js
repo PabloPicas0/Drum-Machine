@@ -7,7 +7,7 @@ const Display = (props) => {
     <div id="secondBox" className="pb-4 px-4">
       <h1 className="text-center mb-4 text-white">Drum Machine</h1>
       <div className="text-center text-light bg-dark optionBox p-1 mb-4">
-        <span>{props.power ? props.padText : "Displayer"}</span>
+        <span>{props.power ? props.padText : "Power OFF"}</span>
       </div>
       <div>
         <label
@@ -48,7 +48,7 @@ const Display = (props) => {
           <label
             htmlFor="flexSwitchCheckDefault"
             className="form-check-label text-white">
-            Mode
+            Anime Mode
           </label>
         </div>
 

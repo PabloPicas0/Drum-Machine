@@ -31,7 +31,7 @@ const DrumPad = (props) => {
       });
       document.removeEventListener("keyup", upHandler);
     };
-  }, [props.soundVolume]);
+  }, [props.soundVolume, props.mode]);
 
   return (
     <div className="col px-1">
@@ -40,7 +40,7 @@ const DrumPad = (props) => {
         className={`${
           props.power
             ? `drum-pad rounded-3 m-2 user-select-none ${
-                pressedKey ? "activePad" : "shadowBox bg-warning"
+                pressedKey ? "activePad" : `shadowBox ${props.mode ? "bg-info" : "bg-warning"}`
               } `
             : "drum-pad-deactive rounded-3 m-2 user-select-none bg-white"
         }`}
@@ -50,7 +50,7 @@ const DrumPad = (props) => {
         <audio
           id={props.keyPress}
           className="clip"
-          type="audio/mpeg"
+          type="audio/mp3"
           src={props.url}
           ref={audioInput}
           muted={props.power ? false : true}
