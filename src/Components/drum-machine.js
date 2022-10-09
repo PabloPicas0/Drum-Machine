@@ -46,6 +46,9 @@ const Drum = () => {
 
   const handleMode = () => {
     setMode((prev) => !prev);
+    setPressedText((prevTxt) =>
+      mode ? (prevTxt = "Normal") : (prevTxt = "Anime")
+    );
   };
   //Handle inputs for Display component
 
