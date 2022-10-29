@@ -3,7 +3,7 @@ App functionality is based on ` user stories ` from [freeCodeCamp] (https://www.
 
 Here you can see project live: https://github.com/PabloPicas0/Drum-Machine
 
-#Motivation
+# Motivation
 My main goal while building this app was to practice following skills:
 - React, React Hooks:
    - Playing sound
