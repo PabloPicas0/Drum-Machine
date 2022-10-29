@@ -8,4 +8,4 @@ My main goal while building this app was to practice following skills:
 - React, React Hooks:
    - Playing sound
    - Changing app behavior based on button state 
-   - Keyboard ecents
+   - Keyboard events
